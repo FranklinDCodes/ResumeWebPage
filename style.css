@@ -1,0 +1,61 @@
+:root {
+    --primary-blue: #354c6d;
+    --grey-1: #d4d4d4; /*c9c9c9*/
+    --grey-2: #707070;
+}
+@font-face {
+    font-family: hoefler;
+    src: url(hoefler-text-regular.ttf);
+}
+.tab-selected {
+    background-color: var(--primary-blue);
+    color: white;
+}
+.tab {
+    height: 16vh;
+    width: 16.666667%;
+}
+.right-bd {
+    border-right: 3px solid var(--grey-2);
+}
+.hoefler {
+    font-family: hoefler;
+    letter-spacing: 1pt;
+    margin: 0;
+}
+#divTopBlock {
+    height: 82vh;
+}
+#divTopBlockLeft {
+    width: 40vw;
+    background-color: var(--grey-1);
+}
+#imgHeadshot {
+    border: 1px solid var(--grey-2);
+}
+#divTitleBar {
+    background-color: var(--primary-blue);
+    position: absolute;
+    width: 33vw;
+    height: 11vh;
+    top: 8%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+#divBar {
+    height: 2vh;
+    background-color: var(--grey-2);
+}
+#divTabBlock {
+    height: 75vh;
+    background-color: var(--primary-blue);
+}
+#divTabBlockText {
+    height: 60vh;
+    background-color: white;
+}
+#divBottomCap {
+    height: 5vh;
+    background-color: var(--grey-1);
+}
