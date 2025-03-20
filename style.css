@@ -18,10 +18,19 @@
 .right-bd {
     border-right: 3px solid var(--grey-2);
 }
-.hoefler {
+.hoefler-header {
     font-family: hoefler;
     letter-spacing: 1pt;
     margin: 0;
+}
+.body-text, li {
+    font-family: Arial, Helvetica, sans-serif;
+    size: 16pt;
+    margin: 0;
+}
+.button-links {
+    color: var(--primary-blue);
+    background-color: var(--grey-1);
 }
 #divTopBlock {
     height: 82vh;

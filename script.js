@@ -29,7 +29,7 @@ arrTabs.forEach(objDivTab => {
 
         // scroll screen if at the top and first click
         // set first click to false
-        if (boolFirstClick && window.scrollY == 0) {
+        if (boolFirstClick && window.scrollY <= 150) {
             document.querySelector('#divTabBlock').scrollIntoView();
             boolFirstClick = false;
         }
