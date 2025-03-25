@@ -1,4 +1,46 @@
 
+// load content
+document.addEventListener("DOMContentLoaded", function() {
+
+    // content category names
+    let arrCategoryNames = ["education", "work", "research", "smart", "projects", "extracurriculars"]
+
+    // content category id tracker
+    let intIdNumber = 1;
+
+    // where the content will be added
+    let objContentBlock = document.querySelector('#divContentBlockContainer');
+
+    // iterate through category names
+    arrCategoryNames.forEach(strCategoryName => {
+
+        // add the content from each file to the content block
+        fetch(`content/${strCategoryName.toLowerCase()}.html`)
+        .then(response => response.text())
+        .then(html => {
+
+            // create new div for content
+            objContentBlock.innerHTML += `<div id=\"divTab${intIdNumber}ContentBlock\" class=\"d-none\">`;
+
+            // add content html to content area
+            objContentBlock.innerHTML += html;
+            objContentBlock.innerHTML += "</div>";
+
+            // increment id
+            intIdNumber ++;
+
+        });
+
+    });
+
+    // unhide first tab
+    document.querySelector(`#divTab1ContentBlock`).classList.remove("d-none");
+    
+    console.log(objContentBlock.innerHTML);
+
+})
+
+
 // store selected tab
 let strSelectedTabId = "divTab1";
 
@@ -18,8 +60,9 @@ arrTabs.forEach(objDivTab => {
             return;
         }
 
-        // de-select current selected 
+        // de-select current selected and hide current content
         document.querySelector(`#${strSelectedTabId}`).classList.remove("tab-selected");
+        document.querySelector(`#${strSelectedTabId}ContentBlock`).classList.add("d-none");
 
         // add selected class to current
         this.classList.add("tab-selected");
@@ -30,7 +73,8 @@ arrTabs.forEach(objDivTab => {
         // set new tab block title
         document.querySelector('#txtTabBlockTitle').textContent = this.textContent;
 
-        // set new tab block text
+        // unhide content
+        document.querySelector(`#${strSelectedTabId}ContentBlock`).classList.remove("d-none");
 
         // scroll screen if at the top and first click
         // set first click to false

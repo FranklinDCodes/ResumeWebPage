@@ -32,24 +32,26 @@
     color: var(--primary-blue);
     background-color: var(--grey-1);
 }
-#divTopBlockLeft {
+#divImgContainer {
     background-color: var(--grey-1);
     height: 82vh;
+    overflow: hidden;
+    position: relative;
 }
 #imgHeadshot {
     border: 1px solid var(--grey-2);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 #divTitleBarContainer {
-    background-color: var(--primary-blue);
     position: absolute;
-    top: 5%;
-    left: 5%;
-    width: 100vw;
+    top: 0;
+    left: 0;
 }
 #divTitleBar {
     background-color: var(--primary-blue);
     color: white;
-    transform: 
 }
 #divBar {
     height: 2vh;
