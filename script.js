@@ -1,9 +1,6 @@
 
 // load content
-document.addEventListener("DOMContentLoaded", function() {
-
-    // content category names
-    let arrCategoryNames = ["education", "work", "research", "smart", "projects", "extracurriculars"]
+async function loadContent() {
 
     // content category id tracker
     let intIdNumber = 1;
@@ -11,35 +8,42 @@ document.addEventListener("DOMContentLoaded", function() {
     // where the content will be added
     let objContentBlock = document.querySelector('#divContentBlockContainer');
 
-    // iterate through category names
-    arrCategoryNames.forEach(strCategoryName => {
+    // content category names
+    let arrCategoryNames = ["education", "work", "research", "smart", "projects", "extracurriculars"]
+  
+    for (const strCategoryName of arrCategoryNames) {
 
-        // add the content from each file to the content block
-        fetch(`content/${strCategoryName.toLowerCase()}.html`)
-        .then(response => response.text())
-        .then(html => {
+        // fetch html
+        let response = await fetch(`content/${strCategoryName.toLowerCase()}.html`);
+        const html = await response.text();
 
-            // create new div for content
-            objContentBlock.innerHTML += `<div id=\"divTab${intIdNumber}ContentBlock\" class=\"d-none\">`;
+        // create new div for content
+        let objNewDivElement = document.createElement('div');
+        objNewDivElement.setAttribute("id", `divTab${intIdNumber}ContentBlock`);
 
-            // add content html to content area
-            objContentBlock.innerHTML += html;
-            objContentBlock.innerHTML += "</div>";
+        // hide if not first element
+        if (intIdNumber !== 1) {
+            objNewDivElement.setAttribute("class", "d-none");
+        }
 
-            // increment id
-            intIdNumber ++;
+        // set content
+        objNewDivElement.innerHTML = html;
+        
+        // add new div to content area
+        objContentBlock.appendChild(objNewDivElement);
 
-        });
+        // increment id
+        intIdNumber ++;
 
-    });
+    }
+        
+}
 
-    // unhide first tab
-    document.querySelector(`#divTab1ContentBlock`).classList.remove("d-none");
+document.addEventListener("DOMContentLoaded", function() {
     
-    console.log(objContentBlock.innerHTML);
+    loadContent();
 
 })
-
 
 // store selected tab
 let strSelectedTabId = "divTab1";
