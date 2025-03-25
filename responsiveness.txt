@@ -1,0 +1,4 @@
+- change picture/highlights from col to row
+- change contact info to 1 column
+- move tab labels into tab info blocks
+- make picture responsive

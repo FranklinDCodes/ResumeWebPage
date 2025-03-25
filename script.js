@@ -27,6 +27,11 @@ arrTabs.forEach(objDivTab => {
         // set new selected tab
         strSelectedTabId = this.id;
 
+        // set new tab block title
+        document.querySelector('#txtTabBlockTitle').textContent = this.textContent;
+
+        // set new tab block text
+
         // scroll screen if at the top and first click
         // set first click to false
         if (boolFirstClick && window.scrollY <= 150) {

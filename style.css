@@ -1,11 +1,11 @@
 :root {
     --primary-blue: #354c6d;
-    --grey-1: #d4d4d4; /*c9c9c9*/
+    --grey-1: #d4d4d4;
     --grey-2: #707070;
 }
 @font-face {
     font-family: hoefler;
-    src: url(hoefler-text-regular.ttf);
+    src: url(assets/hoefler-text-regular.ttf);
 }
 .tab-selected {
     background-color: var(--primary-blue);
@@ -32,25 +32,24 @@
     color: var(--primary-blue);
     background-color: var(--grey-1);
 }
-#divTopBlock {
-    height: 82vh;
-}
 #divTopBlockLeft {
-    width: 40vw;
     background-color: var(--grey-1);
+    height: 82vh;
 }
 #imgHeadshot {
     border: 1px solid var(--grey-2);
 }
-#divTitleBar {
+#divTitleBarContainer {
     background-color: var(--primary-blue);
     position: absolute;
-    width: 33vw;
-    height: 11vh;
-    top: 8%;
-    left: 20%;
-    transform: translate(-50%, -50%);
+    top: 5%;
+    left: 5%;
+    width: 100vw;
+}
+#divTitleBar {
+    background-color: var(--primary-blue);
     color: white;
+    transform: 
 }
 #divBar {
     height: 2vh;
