@@ -69,3 +69,6 @@
     height: 5vh;
     background-color: var(--grey-1);
 }
+#divContentBlockContainer {
+    color: white;
+}

@@ -2,3 +2,4 @@
 - change contact info to 1 column
 - move tab labels into tab info blocks
 - make picture responsive
+- fix image lifting near medium screen size
