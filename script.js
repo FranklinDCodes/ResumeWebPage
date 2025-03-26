@@ -20,7 +20,7 @@ async function loadContent() {
         // create new div for content
         let objNewDivElement = document.createElement('div');
         objNewDivElement.setAttribute("id", `divTab${intIdNumber}ContentBlock`);
-        objNewDivElement.classList.add("d-flex flex column")
+        objNewDivElement.setAttribute("class", "d-flex flex-column p-5 justify-contents-start");
 
         // hide if not first element
         if (intIdNumber !== 1) {
