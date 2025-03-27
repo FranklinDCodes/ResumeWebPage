@@ -7,6 +7,9 @@
     font-family: hoefler;
     src: url(assets/hoefler-text-regular.ttf);
 }
+button {
+    border: 0;
+}
 .tab-selected {
     background-color: var(--primary-blue);
     color: white;
@@ -31,6 +34,9 @@
 .button-links {
     color: var(--primary-blue);
     background-color: var(--grey-1);
+}
+.indented {
+    margin-left: 30px;
 }
 #divImgContainer {
     background-color: var(--grey-1);
@@ -60,10 +66,6 @@
 #divTabBlock {
     height: 75vh;
     background-color: var(--primary-blue);
-}
-#divTabBlockText {
-    height: 60vh;
-    background-color: white;
 }
 #divBottomCap {
     height: 5vh;

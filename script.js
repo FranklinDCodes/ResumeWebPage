@@ -20,7 +20,7 @@ async function loadContent() {
         // create new div for content
         let objNewDivElement = document.createElement('div');
         objNewDivElement.setAttribute("id", `divTab${intIdNumber}ContentBlock`);
-        objNewDivElement.setAttribute("class", "d-flex flex-column p-5 justify-contents-start");
+        objNewDivElement.setAttribute("class", "d-flex flex-column mt-5 text-start col-12");
 
         // hide if not first element
         if (intIdNumber !== 1) {
@@ -41,9 +41,7 @@ async function loadContent() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    
     loadContent();
-
 })
 
 // store selected tab
