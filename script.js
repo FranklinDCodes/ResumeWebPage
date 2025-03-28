@@ -6,7 +6,7 @@ async function loadContent() {
     let intIdNumber = 1;
 
     // where the content will be added
-    let objContentBlock = document.querySelector('#divContentBlockContainer');
+    let objContentBlock = document.querySelector('#divTextContent');
 
     // content category names
     let arrCategoryNames = ["education", "work", "research", "smart", "projects", "extracurriculars"]
