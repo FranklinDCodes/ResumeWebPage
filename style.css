@@ -64,7 +64,7 @@ button {
     background-color: var(--grey-2);
 }
 #divTabBlock {
-    height: 75vh;
+    min-height: 75vh;
     background-color: var(--primary-blue);
 }
 #divBottomCap {
