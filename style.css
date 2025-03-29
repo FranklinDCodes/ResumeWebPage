@@ -46,7 +46,7 @@ button {
 }
 #divSmallImgContainer {
     background-color: var(--grey-1);
-    height: 50vh;
+    height: 60vh;
     overflow: hidden;
     position: relative;
 }

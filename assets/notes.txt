@@ -1,0 +1,2 @@
+me_original.jpg is uncropped
+when cropping, only change width, not height
