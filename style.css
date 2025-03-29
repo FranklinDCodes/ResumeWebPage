@@ -46,7 +46,7 @@ button {
 }
 #divSmallImgContainer {
     background-color: var(--grey-1);
-    height: 60vh;
+    height: 72vh;
     overflow: hidden;
     position: relative;
 }
@@ -58,7 +58,7 @@ button {
 }
 #imgSmallHeadshot {
     border: 1px solid var(--grey-2);
-    height: 142%;
+    height: 150%;
     object-fit: cover;
     object-position: bottom;
 }
