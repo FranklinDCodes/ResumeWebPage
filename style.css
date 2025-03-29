@@ -58,7 +58,7 @@ button {
 }
 #imgSmallHeadshot {
     border: 1px solid var(--grey-2);
-    height: 80vh;
+    height: 142%;
     object-fit: cover;
     object-position: bottom;
 }
