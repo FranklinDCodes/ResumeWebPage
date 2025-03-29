@@ -52,7 +52,13 @@ button {
 }
 #imgHeadshot {
     border: 1px solid var(--grey-2);
-    width: 100%;
+    height: 150%;
+    object-fit: cover;
+    object-position: bottom;
+}
+#imgSmallHeadshot {
+    border: 1px solid var(--grey-2);
+    height: 80vh;
     object-fit: cover;
     object-position: bottom;
 }
