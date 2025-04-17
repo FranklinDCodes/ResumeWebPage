@@ -19,7 +19,7 @@ async function loadContent() {
 
         // create new div for content
         let objNewDivElement = document.createElement('div');
-        objNewDivElement.setAttribute("id", `divTab${intIdNumber}ContentBlock`);
+        objNewDivElement.setAttribute("id", `tab${intIdNumber}ContentBlock`);
         objNewDivElement.setAttribute("class", "d-flex flex-column mt-5 text-start col-12");
 
         // hide if not first element
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 // store selected tab
-let strSelectedTabId = "divTab1";
+let strSelectedTabId = "tab1";
 
 // get all tabs
 let arrTabs = document.querySelectorAll('.tab');
