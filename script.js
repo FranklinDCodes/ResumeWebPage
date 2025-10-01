@@ -1,4 +1,8 @@
 
+// tab categories
+var arrCategoryNames = ["education", "work", "research", "smart", "projects", "extracurriculars"]
+
+
 // load content
 async function loadContent() {
 
@@ -7,9 +11,6 @@ async function loadContent() {
 
     // where the content will be added
     let objContentBlock = document.querySelector('#divTextContent');
-
-    // content category names
-    let arrCategoryNames = ["education", "work", "research", "smart", "projects", "extracurriculars"]
   
     for (const strCategoryName of arrCategoryNames) {
 
@@ -17,9 +18,9 @@ async function loadContent() {
         let response = await fetch(`content/${strCategoryName.toLowerCase()}.html`);
         const html = await response.text();
 
-        // create new div for content
+        // create new div for content  block
         let objNewDivElement = document.createElement('div');
-        objNewDivElement.setAttribute("id", `tab${intIdNumber}ContentBlock`);
+        objNewDivElement.setAttribute("id", `divTab${intIdNumber}ContentBlock`);
         objNewDivElement.setAttribute("class", "d-flex flex-column mt-5 text-start col-12");
 
         // hide if not first element
@@ -33,6 +34,11 @@ async function loadContent() {
         // add new div to content area
         objContentBlock.appendChild(objNewDivElement);
 
+        // add new div to small tab
+        let objNewSmallDivElement = objNewDivElement.cloneNode(true);
+        objNewSmallDivElement.id += "Small";
+        document.querySelector(`#divTextContent${intIdNumber}`).appendChild(objNewSmallDivElement);
+
         // increment id
         intIdNumber ++;
 
@@ -40,12 +46,29 @@ async function loadContent() {
         
 }
 
+// load content on document loaded
 document.addEventListener("DOMContentLoaded", function() {
     loadContent();
 })
 
+// hide small panels when it resizes
+window.addEventListener('resize', () => {
+
+    const boolLargeScreen = window.innerWidth >= 992;
+
+    // actively set display at larger sizes
+    if (!boolLargeScreen) {
+
+
+        document.querySelector(`#${strSelectedTabId}Block`).style.display = 'none';
+
+    }
+
+
+});
+
 // store selected tab
-let strSelectedTabId = "tab1";
+let strSelectedTabId = "divTab1";
 
 // get all tabs
 let arrTabs = document.querySelectorAll('.tab');
@@ -63,30 +86,41 @@ arrTabs.forEach(objDivTab => {
             return;
         }
 
-        // de-select current selected and hide current content
-        document.querySelector(`#${strSelectedTabId}`).classList.remove("tab-selected");
-        document.querySelector(`#${strSelectedTabId}ContentBlock`).classList.add("d-none");
-
-        // add selected class to current
-        this.classList.add("tab-selected");
-
         // set new selected tab
         strSelectedTabId = this.id;
 
-        // set new tab block title
-        document.querySelector('#txtTabBlockTitle').textContent = this.textContent;
+        // de-select current selected and hide current content
+        document.querySelector(`#${strSelectedTabId} button`).classList.remove("tab-selected");
+        document.querySelector(`#${strSelectedTabId}ContentBlock`).classList.add("d-none");
+
+        // add selected class to current
+        document.querySelector(`#${strSelectedTabId} button`).classList.add("tab-selected");
 
         // unhide content
         document.querySelector(`#${strSelectedTabId}ContentBlock`).classList.remove("d-none");
 
-        // scroll screen if at the top and first click
-        // set first click to false
-        if (boolFirstClick && window.scrollY <= 150) {
-            document.querySelector('#divTabBlock').scrollIntoView();
-            boolFirstClick = false;
+        // check if big tab block is showing
+        let strTabBlockDisplay = window.getComputedStyle(document.querySelector('#divTabBlock')).display;
+
+        if (strTabBlockDisplay == "block") {
+
+            // scroll screen if at the top and first click
+            // set first click to false
+            if (boolFirstClick && window.scrollY <= 150) {
+                document.querySelector(`#${strSelectedTabId}Block`).scrollIntoView();
+                boolFirstClick = false;
+            }
+            else if (boolFirstClick) {
+                boolFirstClick = false;
+            }
+
         }
-        else if (boolFirstClick) {
-            boolFirstClick = false;
+        else {
+
+            // scroll down small content window
+            $(`${strSelectedTabId}Block`).slideDown(1000);
+            document.querySelector(`#${strSelectedTabId}Block`).classList.remove('d-none');
+
         }
 
     });

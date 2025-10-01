@@ -14,12 +14,42 @@ button {
     background-color: var(--primary-blue);
     color: white;
 }
-.tab {
-    height: 13vh;
+.tab-std {
+    width: 16.666667%;
+    border-right: 3px solid var(--grey-2);
+}
+/* change width and border setting at med or smaller */
+@media (max-width: 991.98px) {
+    .tab-std {
+        width: 100%;
+        border-top: 3px solid var(--grey-2);
+        border-right: none;
+    }
+}
+/* first tab in the line (no top outline when small) */
+.tab-first {
+    width: 16.666667%;
+    border-right: 3px solid var(--grey-2);
+}
+@media (max-width: 991.98px) {
+    .tab-first {
+        width: 100%;
+        border-right: none;
+    }
+}
+/* last tab in the line (no right outline when large) */
+.tab-last {
     width: 16.666667%;
 }
-.right-bd {
-    border-right: 3px solid var(--grey-2);
+@media (max-width: 991.98px) {
+    .tab-last {
+        width: 100%;
+        border-top: 3px solid var(--grey-2);
+        border-bottom: 3px solid var(--grey-2);
+    }
+}
+.btn-tab {
+    height: 13vh;
 }
 .hoefler-header {
     font-family: hoefler;

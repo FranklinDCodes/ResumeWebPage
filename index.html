@@ -62,41 +62,88 @@
         </div>
     </div>
     <div id="divBar"></div>
-    <div class="d-flex flex-row">
-        <div class="d-flex flex-column col-12 col-md-5">
-            <button id="tab1" class="tab tab-selected right-bd d-flex justify-content-center align-items-center">
-                <h5 class="hoefler-header d-none d-md-block">Education</h5>
+    <div class="d-flex flex-md-row flex-column">
+        <div id="divTab1" class="d-flex flex-column tab tab-first justify-content-center align-items-center">
+            <button class="btn-tab tab-selected col-12">
+                <h5 class="hoefler-header">Education</h5>
             </button>
         </div>
-        <div class="d-flex flex-column col-12 col-md-5">
-            <button id="tab2" class="tab right-bd d-flex col-12 justify-content-center align-items-center">
-                <h5 class="hoefler-header d-none d-md-block">Work</h5>
+        <div id="divTab1Block" class="flex-column align-items-center d-none">
+            <div id="divContentBlockContainer1" class="d-flex flex-row col-12">
+                <div class="col-1"></div>
+                <div id="divTextContent1" class="d-flex flex-column body-text p-4">
+                    
+                </div>
+            </div>
+        </div>
+        <div id="divTab2" class="d-flex flex-column tab tab-std justify-content-center align-items-center">
+            <button class="btn-tab col-12">
+                <h5 class="hoefler-header">Work</h5>
             </button>
         </div>
-        <div class="d-flex flex-column col-12 col-md-5">
-            <button id="tab3" class="tab right-bd d-flex col-12 justify-content-center align-items-center">
-                <h5 class="hoefler-header d-none d-md-block">Research</h5>
+        <div id="divTab2Block" class="flex-column align-items-center d-none">
+            <div id="divContentBlockContainer2" class="d-flex flex-row col-12">
+                <div class="col-1"></div>
+                <div id="divTextContent2" class="d-flex flex-column body-text p-4">
+    
+                </div>
+            </div>
+        </div>
+        <div id="divTab3" class="d-flex flex-column tab tab-std justify-content-center align-items-center">
+            <button class="btn-tab col-12">
+                <h5 class="hoefler-header">Research</h5>
             </button>
         </div>
-        <div class="d-flex flex-column col-12 col-md-5">
-            <button id="tab4" class="tab right-bd d-flex col-12 justify-content-center align-items-center">
-                <h5 class="hoefler-header d-none d-md-block">SMART</h5>
+        <div id="divTab3Block" class="flex-column align-items-center d-none">
+            <div id="divContentBlockContainer3" class="d-flex flex-row col-12">
+                <div class="col-1"></div>
+                <div id="divTextContent3" class="d-flex flex-column body-text p-4">
+    
+                </div>
+            </div>
+        </div>
+        <div id="divTab4" class="d-flex flex-column tab tab-std justify-content-center align-items-center">
+            <button class="btn-tab col-12">
+                <h5 class="hoefler-header">SMART</h5>
             </button>
         </div>
-        <div class="d-flex flex-column col-12 col-md-5">
-            <button id="tab5" class="tab right-bd d-flex col-12 justify-content-center align-items-center">
-                <h5 class="hoefler-header d-none d-md-block">Projects</h5>
+        <div id="divTab4Block" class="flex-column align-items-center d-none">
+            <div id="divContentBlockContainer4" class="d-flex flex-row col-12">
+                <div class="col-1"></div>
+                <div id="divTextContent4" class="d-flex flex-column body-text p-4">
+    
+                </div>
+            </div>
+        </div>
+        <div id="divTab5" class="d-flex flex-column tab tab-std justify-content-center align-items-center">
+            <button class="btn-tab col-12">
+                <h5 class="hoefler-header">Projects</h5>
             </button>
         </div>
-        <div class="d-flex flex-column col-12 col-md-5">
-            <button id="tab6" class="tab d-flex col-12 col-md-5 flex-column justify-content-center align-items-center">
-                <h5 class="hoefler-header d-none d-md-block">Extra-</h5>
-                <h5 class="hoefler-header d-none d-md-block">curriculars</h5>
+        <div id="divTab5Block" class="flex-column align-items-center d-none">
+            <div id="divContentBlockContainer5" class="d-flex flex-row col-12">
+                <div class="col-1"></div>
+                <div id="divTextContent5" class="d-flex flex-column body-text p-4">
+    
+                </div>
+            </div>
+        </div>
+        <div id="divTab6" class="d-flex flex-column tab tab-last justify-content-center align-items-center">
+            <button class="btn-tab col-12">
+                <h5 class="hoefler-header">Extra-</h5>
+                <h5 class="hoefler-header">curriculars</h5>
             </button>
+        </div>
+        <div id="divTab6Block" class="flex-column align-items-center d-none">
+            <div id="divContentBlockContainer6" class="d-flex flex-row col-12">
+                <div class="col-1"></div>
+                <div id="divTextContent6" class="d-flex flex-column body-text p-4">
+    
+                </div>
+            </div>
         </div>
     </div>
-    <div id="divTabBlock" class="d-flex flex-column align-items-center">
-        <h1 id="txtTabBlockTitle" class="hoefler-header tab-selected d-block d-md-none mt-4">Education</h1>
+    <div id="divTabBlock" class="d-flex flex-column align-items-center d-none d-md-block">
         <div id="divContentBlockContainer" class="d-flex flex-row col-12">
             <div class="col-1"></div>
             <div id="divTextContent" class="d-flex flex-column body-text p-4">
@@ -107,5 +154,6 @@
     <div id="divBottomCap"></div>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </body>
 </html>
