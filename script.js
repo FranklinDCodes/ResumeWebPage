@@ -28,6 +28,9 @@ async function loadContent() {
             objNewDivElement.classList.add("d-none");
         }
 
+        // hide mobile phone version text
+        $(`#divTab${intIdNumber}Block`).hide();
+
         // set content
         objNewDivElement.innerHTML = html;
         
@@ -37,6 +40,7 @@ async function loadContent() {
         // add new div to small tab
         let objNewSmallDivElement = objNewDivElement.cloneNode(true);
         objNewSmallDivElement.id += "Small";
+        objNewSmallDivElement.classList.remove("d-none");
         document.querySelector(`#divTextContent${intIdNumber}`).appendChild(objNewSmallDivElement);
 
         // increment id
@@ -59,11 +63,9 @@ window.addEventListener('resize', () => {
     // actively set display at larger sizes
     if (!boolLargeScreen) {
 
-
         document.querySelector(`#${strSelectedTabId}Block`).style.display = 'none';
 
     }
-
 
 });
 
@@ -86,13 +88,17 @@ arrTabs.forEach(objDivTab => {
             return;
         }
 
+
+        // handle content for desktop version
+        
         // set new selected tab
+        strOldSelectedTabId = strSelectedTabId
         strSelectedTabId = this.id;
 
         // de-select current selected and hide current content
-        document.querySelector(`#${strSelectedTabId} button`).classList.remove("tab-selected");
-        document.querySelector(`#${strSelectedTabId}ContentBlock`).classList.add("d-none");
-
+        document.querySelector(`#${strOldSelectedTabId} button`).classList.remove("tab-selected");
+        document.querySelector(`#${strOldSelectedTabId}ContentBlock`).classList.add("d-none");
+        
         // add selected class to current
         document.querySelector(`#${strSelectedTabId} button`).classList.add("tab-selected");
 
@@ -117,12 +123,13 @@ arrTabs.forEach(objDivTab => {
         }
         else {
 
+            // hide on small window
+            $(`#${strOldSelectedTabId}Block`).slideUp(1000);
+
             // scroll down small content window
-            $(`${strSelectedTabId}Block`).slideDown(1000);
-            document.querySelector(`#${strSelectedTabId}Block`).classList.remove('d-none');
+            $(`#${strSelectedTabId}Block`).slideDown(1000);
+
 
         }
-
     });
-    
 });

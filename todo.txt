@@ -1,5 +1,4 @@
-- Add feature of un-hiding tab data (no first selected tab)
-- Add tab content
-- fix photo and put it in
 - Make sure accessible
-- add scrolling tabs for phone view
+- responsiveness
+- update header page height and content
+- Update content!

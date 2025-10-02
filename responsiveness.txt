@@ -1,5 +1,3 @@
-- change picture/highlights from col to row
 - change contact info to 1 column
-- move tab labels into tab info blocks
-- make picture responsive
-- fix image lifting near medium screen size
+- make sure first selected is set for mobile version (don't hide it)
+- make sure select slides down when switch to mobile version
