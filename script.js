@@ -58,12 +58,28 @@ document.addEventListener("DOMContentLoaded", function() {
 // hide small panels when it resizes
 window.addEventListener('resize', () => {
 
-    const boolLargeScreen = window.innerWidth >= 992;
+    const boolMedScreen = window.innerWidth >= 767; // 992;
 
     // actively set display at larger sizes
-    if (!boolLargeScreen) {
+    if (!boolMedScreen) {
 
         document.querySelector(`#${strSelectedTabId}Block`).style.display = 'none';
+        
+        // slide down selected tab
+        if (!boolSmallTabScrolled) {
+
+            $(`#${strSelectedTabId}Block`).slideDown(1000, "linear", function () {
+
+                boolSmallTabScrolled = true;
+
+            });
+
+        }
+
+    }
+    else {
+
+        boolSmallTabScrolled = false;
 
     }
 
@@ -77,6 +93,9 @@ let arrTabs = document.querySelectorAll('.tab');
 
 // false if any tab has been clicked
 let boolFirstClick = true;
+
+// true if data for small screen size is scrolled down
+let boolSmallTabScrolled = false;
 
 // add on click to tabs
 arrTabs.forEach(objDivTab => {
@@ -97,10 +116,12 @@ arrTabs.forEach(objDivTab => {
 
         // de-select current selected and hide current content
         document.querySelector(`#${strOldSelectedTabId} button`).classList.remove("tab-selected");
+        document.querySelector(`#${strOldSelectedTabId} button h5`).classList.remove("tab-selected");
         document.querySelector(`#${strOldSelectedTabId}ContentBlock`).classList.add("d-none");
         
         // add selected class to current
         document.querySelector(`#${strSelectedTabId} button`).classList.add("tab-selected");
+        document.querySelector(`#${strSelectedTabId} button h5`).classList.add("tab-selected");
 
         // unhide content
         document.querySelector(`#${strSelectedTabId}ContentBlock`).classList.remove("d-none");
@@ -123,12 +144,15 @@ arrTabs.forEach(objDivTab => {
         }
         else {
 
-            // hide on small window
-            $(`#${strOldSelectedTabId}Block`).slideUp(1000);
+            if (strOldSelectedTabId !== strSelectedTabId) {
 
-            // scroll down small content window
-            $(`#${strSelectedTabId}Block`).slideDown(1000);
+                // hide on small window
+                $(`#${strOldSelectedTabId}Block`).slideUp(1000);
 
+                // scroll down small content window
+                $(`#${strSelectedTabId}Block`).slideDown(1000);
+
+            }
 
         }
     });

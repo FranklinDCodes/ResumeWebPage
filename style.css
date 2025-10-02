@@ -13,13 +13,15 @@ button {
 .tab-selected {
     background-color: var(--primary-blue);
     color: white;
+    font-weight: bold;
+    font-size: 26px;
 }
 .tab-std {
     width: 16.666667%;
     border-right: 3px solid var(--grey-2);
 }
 /* change width and border setting at med or smaller */
-@media (max-width: 991.98px) {
+@media (max-width: 767px) {
     .tab-std {
         width: 100%;
         border-top: 3px solid var(--grey-2);
@@ -31,7 +33,7 @@ button {
     width: 16.666667%;
     border-right: 3px solid var(--grey-2);
 }
-@media (max-width: 991.98px) {
+@media (max-width: 767px) {
     .tab-first {
         width: 100%;
         border-right: none;
@@ -41,7 +43,7 @@ button {
 .tab-last {
     width: 16.666667%;
 }
-@media (max-width: 991.98px) {
+@media (max-width: 767px) {
     .tab-last {
         width: 100%;
         border-top: 3px solid var(--grey-2);
@@ -63,10 +65,15 @@ button {
 }
 .button-links {
     color: var(--primary-blue);
-    background-color: var(--grey-1);
+    background-color: white;
 }
 .indented {
     margin-left: 30px;
+}
+.tab-block {
+    background-color: var(--primary-blue);
+    color: white;
+    border-top: 3px solid white;
 }
 #divImgContainer {
     background-color: var(--grey-1);
