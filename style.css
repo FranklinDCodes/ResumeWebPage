@@ -9,7 +9,7 @@
 }
 button {
     border: 0;
-    color: white;
+    color: black;
 }
 .tab-selected {
     background-color: var(--primary-blue);
