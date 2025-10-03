@@ -66,20 +66,17 @@ window.addEventListener('resize', () => {
         document.querySelector(`#${strSelectedTabId}Block`).style.display = 'none';
         
         // slide down selected tab
-        if (!boolSmallTabScrolled) {
+        if (!boolSmallTabShowing) {
 
-            $(`#${strSelectedTabId}Block`).slideDown(1000, "linear", function () {
-
-                boolSmallTabScrolled = true;
-
-            });
+            $(`#${strSelectedTabId}Block`).show();
 
         }
 
     }
     else {
 
-        boolSmallTabScrolled = false;
+        $(`#${strSelectedTabId}Block`).hide();
+        boolSmallTabShowing = false;
 
     }
 
@@ -95,7 +92,7 @@ let arrTabs = document.querySelectorAll('.tab');
 let boolFirstClick = true;
 
 // true if data for small screen size is scrolled down
-let boolSmallTabScrolled = false;
+let boolSmallTabShowing = false;
 
 // add on click to tabs
 arrTabs.forEach(objDivTab => {
