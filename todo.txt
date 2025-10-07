@@ -1,3 +1,0 @@
-- Make sure accessible
-    - Make headers semantic
-    
