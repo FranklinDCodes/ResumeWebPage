@@ -1,3 +1,0 @@
-- change contact info to 1 column
-- make sure first selected is set for mobile version (don't hide it)
-- make sure select slides down when switch to mobile version

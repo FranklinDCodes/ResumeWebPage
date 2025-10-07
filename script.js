@@ -6,6 +6,22 @@ var arrCategoryNames = ["education", "work", "research", "smart", "projects", "e
 // load content
 async function loadContent() {
 
+    // load name
+    let nameResponse = await fetch(`content/name.txt`);
+    const nameTxt = await nameResponse.text();
+    document.querySelector('title').innerHTML = nameTxt;
+    document.querySelector('#h1TitleBar').innerHTML = nameTxt;
+
+    // load highlights
+    let highlightResponse = await fetch(`content/highlights.html`);
+    const highlightHtml = await highlightResponse.text();
+    document.querySelector('#ulHighlights').innerHTML = highlightHtml
+
+    // load contact
+    let contactResponse = await fetch(`content/contact.html`);
+    const contactHtml = await contactResponse.text();
+    document.querySelector('#divContact').innerHTML = contactHtml
+
     // content category id tracker
     let intIdNumber = 1;
 
@@ -113,12 +129,12 @@ arrTabs.forEach(objDivTab => {
 
         // de-select current selected and hide current content
         document.querySelector(`#${strOldSelectedTabId} button`).classList.remove("tab-selected");
-        document.querySelector(`#${strOldSelectedTabId} button h5`).classList.remove("tab-selected");
+        document.querySelector(`#${strOldSelectedTabId} button h2`).classList.remove("tab-selected");
         document.querySelector(`#${strOldSelectedTabId}ContentBlock`).classList.add("d-none");
         
         // add selected class to current
         document.querySelector(`#${strSelectedTabId} button`).classList.add("tab-selected");
-        document.querySelector(`#${strSelectedTabId} button h5`).classList.add("tab-selected");
+        document.querySelector(`#${strSelectedTabId} button h2`).classList.add("tab-selected");
 
         // unhide content
         document.querySelector(`#${strSelectedTabId}ContentBlock`).classList.remove("d-none");

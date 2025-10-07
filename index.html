@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Franklin Doane</title>
+    <title></title>
     <link id="page_favicon" rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/colors.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,7 +15,7 @@
         <div id="divTopBlock" class="d-flex flex-column flex-md-row">
             <div class="d-none d-sm-block col-12 col-md-5">
                 <div id="divImgContainer" class="d-flex align-items-end justify-content-center">
-                    <img id="imgHeadshot" src="assets/me.jpg" alt="Headshot of Franklin">
+                    <img id="imgHeadshot" src="assets/me.jpg" alt="Professional headshot">
                 </div>
             </div>
             <div class="d-block d-sm-none col-12 col-md-5">
@@ -23,37 +24,26 @@
                 </div>
             </div>
             <div class="col-12 col-md-7 p-5">
-                <h4 class="hoefler-header">Highlights</h4>
-                <ul class="mt-2">
-                    <li>Computer science and Machine Learning</li>
-                    <li>4.0 GPA student at Tennessee Tech</li>
-                    <li>DoD SMART Scholar</li>
-                    <li>Machine learning work experience</li>
-                    <li>Participated in research at TTU</li>
-                    <li>Extensive personal projects</li>
+                <h2 class="hoefler-header">Highlights</h2>
+                <ul id="ulHighlights" class="mt-2">
                 </ul>
-                <h4 class="hoefler-header">Contact</h4>
+                <h2 class="hoefler-header">Contact</h2>
                 <div class="d-flex flex-column">
                     <div class="d-flex flex-column flex-md-row">
-                        <div class="d-flex flex-column">
-                            <p class="body-text mx-3 mt-2">331-245-6413</p>
-                            <p class="body-text mx-3 mt-1">fgdoane42@tntech.edu</p>
-                            <div class="d-flex flex-row mt-3 d-none d-md-block">
-                                <a href="https://github.com/franklinDCodes" class="btn button-links mx-3" target="_blank" rel="noopener noreferrer"><i class="bi bi-github h5"></i></a>
-                                <a href="https://www.linkedin.com/in/franklin-doane-894820261/" class="btn button-links" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin h5"></i></a>
-                            </div>
+                        <div id="divContact" class="d-flex flex-column">
+                            
                         </div>
                     </div>
                     <div class="d-flex flex-row mt-3 d-block d-md-none">
-                        <a href="https://github.com/franklinDCodes" class="btn button-links mx-3" target="_blank" rel="noopener noreferrer"><i class="bi bi-github h5"></i></a>
-                        <a href="https://www.linkedin.com/in/franklin-doane-894820261/" class="btn button-links" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin h5"></i></a>
+                        <a href="https://github.com/franklinDCodes" class="btn button-links mx-3" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                        <a href="https://www.linkedin.com/in/franklin-doane-894820261/" class="btn button-links" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
         </div>
         <div id="divTitleBarContainer" class="d-flex justify-content-center align-items-center col-12 col-md-5 mt-4">
             <div id="divTitleBar" class="rounded-pill text-center p-2 col-10">
-                <h1 class="hoefler-header">Franklin Doane</h1>
+                <h1 id="h1TitleBar" class="hoefler-header"></h1>
             </div>
         </div>
     </div>
@@ -61,7 +51,7 @@
     <div class="d-flex flex-md-row flex-column">
         <div id="divTab1" class="d-flex flex-column tab tab-first justify-content-center align-items-center">
             <button class="btn-tab tab-selected col-12">
-                <h5 class="hoefler-header tab-selected">Education</h5>
+                <h2 class="hoefler-header tab-selected tab-font">Education</h2>
             </button>
         </div>
         <div id="divTab1Block" class="flex-column align-items-center tab-block">
@@ -74,7 +64,7 @@
         </div>
         <div id="divTab2" class="d-flex flex-column tab tab-std justify-content-center align-items-center">
             <button class="btn-tab col-12">
-                <h5 class="hoefler-header">Work</h5>
+                <h2 class="hoefler-header tab-font">Work</h2>
             </button>
         </div>
         <div id="divTab2Block" class="flex-column align-items-center tab-block">
@@ -87,7 +77,7 @@
         </div>
         <div id="divTab3" class="d-flex flex-column tab tab-std justify-content-center align-items-center">
             <button class="btn-tab col-12">
-                <h5 class="hoefler-header">Research</h5>
+                <h2 class="hoefler-header tab-font">Research</h2>
             </button>
         </div>
         <div id="divTab3Block" class="flex-column align-items-center tab-block">
@@ -100,7 +90,7 @@
         </div>
         <div id="divTab4" class="d-flex flex-column tab tab-std justify-content-center align-items-center">
             <button class="btn-tab col-12">
-                <h5 class="hoefler-header">SMART</h5>
+                <h2 class="hoefler-header tab-font">SMART</h2>
             </button>
         </div>
         <div id="divTab4Block" class="flex-column align-items-center tab-block">
@@ -113,7 +103,7 @@
         </div>
         <div id="divTab5" class="d-flex flex-column tab tab-std justify-content-center align-items-center">
             <button class="btn-tab col-12">
-                <h5 class="hoefler-header">Projects</h5>
+                <h2 class="hoefler-header tab-font">Projects</h2>
             </button>
         </div>
         <div id="divTab5Block" class="flex-column align-items-center tab-block">
@@ -126,8 +116,8 @@
         </div>
         <div id="divTab6" class="d-flex flex-column tab tab-last justify-content-center align-items-center">
             <button class="btn-tab col-12">
-                <h5 class="hoefler-header">Extra-</h5>
-                <h5 class="hoefler-header">curriculars</h5>
+                <h2 class="hoefler-header tab-font">Extra-</h2>
+                <h2 class="hoefler-header tab-font">curriculars</h2>
             </button>
         </div>
         <div id="divTab6Block" class="flex-column align-items-center tab-block">

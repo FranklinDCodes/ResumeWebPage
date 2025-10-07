@@ -1,4 +1,3 @@
 - Make sure accessible
-- responsiveness
-- update header page height and content
-- Update content!
+    - Make headers semantic
+    
