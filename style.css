@@ -42,6 +42,11 @@ i { /* h5 style */
   line-height: 1.5;
   margin-bottom: 0.5rem;
 }
+hr {
+    border: none;
+    height: 3px;
+    background-color: white;
+}
 .tab-selected {
     background-color: var(--primary-color);
     color: white;
@@ -106,6 +111,9 @@ i { /* h5 style */
     color: white;
     border-top: 3px solid white;
 }
+.links {
+    color: var(--green);
+}
 #divImgContainer {
     background-color: var(--grey-1);
     height: 85vh;
@@ -154,8 +162,9 @@ i { /* h5 style */
 #divContentBlockContainer {
     color: white;
 }
-
-
-
-
-
+#divTextContentColorBlock {
+    background-color: var(--dark-primary);
+}
+#divTabBlockSpacer {
+    background-color: var(--color-primary);
+}
